@@ -8,7 +8,7 @@
 #include <sstream>
 #include <iomanip>
 #include <cctype>
-#include <Windows.h>
+//#include <Windows.h>
 using namespace std;
 
 void PressEnter() {
@@ -72,9 +72,9 @@ void Player::Dungeon(int dung) {
     Monster monster;
     monster.Init(dung);
     cout << "\n\nA " << monster.GetName() << " Appears!" << endl;
-    Sleep(1000);
+    //Sleep(1000);
     cout << "Get ready for battle!" << endl << endl;
-    Sleep(2000);
+    //Sleep(2000);
     while ((health > 0) && (monster.GetHealth() > 0)){
       int j;
 
@@ -112,7 +112,7 @@ void Player::Dungeon(int dung) {
         case 0:
           int retreatInput;
           cout << "You can retreat but the enemy will take an opportunity attack..." << endl;
-          Sleep(1500);
+          //Sleep(1500);
           cout << "Press \"0\" to retreat or anything else to keep fighting: " << endl;
           ///////////////////
           /////////////////
@@ -139,7 +139,7 @@ void Player::Store(){
   cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
   Stats();
   cout << "Welcome to the General Store, please take your time...\n";
-  Sleep(2000);
+  //Sleep(2000);
 
   while (!leaveStore){
     cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
@@ -179,7 +179,7 @@ void Player::Store(){
         cost = 10 * buy;
         if (cost > gold) {
           cout << "You do not have en9ough gp for that!\n";
-          Sleep(1500);
+          //Sleep(1500);
           cout << "Choose smaller quantity or pick a different item." << endl;
         }
         else {
@@ -190,12 +190,12 @@ void Player::Store(){
       case 2:
         if (gold < 20){
           cout << "You do not have enough gp for that!\n";
-          Sleep(1500);
+          //Sleep(1500);
           cout << "Come back when you have more gp to purchase this item..." << endl;
         }
         else {
           cout << "Are you sure you want to make this purchase? \n";
-          Sleep(1500);
+          //Sleep(1500);
           cout << "Press \"2\" again to confirm or anything else to return to the store menu: ";
           cin.clear();
           cin >> choice;
@@ -209,12 +209,12 @@ void Player::Store(){
       case 3:
         if (gold < 40) {
           cout << "You do not have enough gp for that!\n";
-          Sleep(1500);
+          //Sleep(1500);
           cout << "Come back when you have more gp to purchase this item..." << endl;
         }
         else {
           cout << "Are you sure you want to make this purchase? \n";
-          Sleep(1500);
+          //Sleep(1500);
           cout << "Press \"3\" again to confirm or anything else to return to the store menu: ";
           cin >> choice;
           if (choice == "3") {
@@ -227,12 +227,12 @@ void Player::Store(){
       case 4:
         if (gold < 60) {
           cout << "You do not have enough gp for that!\n";
-          Sleep(1500);
+          //Sleep(1500);
           cout << "Come back when you have more gp to purchase this item..." << endl;
         }
         else {
           cout << "Are you sure you want to make this purchase? \n";
-          Sleep(1500);
+          //Sleep(1500);
           cout << "Press \"4\" again to confirm or anything else to return to the store menu: ";
           cin >> choice;
           if (choice == "4") {
@@ -249,7 +249,7 @@ void Player::Store(){
       default:
         break;
     }
-    Sleep(1500);
+    //Sleep(1500);
     cin.ignore();
     cout << "\nPress \"Enter\" to continue." << endl;
     cin.get();

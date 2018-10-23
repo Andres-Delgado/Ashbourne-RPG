@@ -9,7 +9,7 @@
 #include <sstream>
 #include <iomanip>
 #include <cctype>
-#include <Windows.h>
+//#include <Windows.h>
 using namespace std;
 
 void Title(){
@@ -55,13 +55,13 @@ int main() {
   noob.SetName(userName);
   cout << endl;
 
-  Sleep(1000);
+  //Sleep(1000);
   cout << "Welcome " << noob.GetName() << ", you are our last hope... Please defeat the Dragon that has been terrorizing our town!\n";
-  Sleep(3000);
+  //Sleep(3000);
   cout << "You can find the dragon in it's lair..." << endl;
-  Sleep(2500);
+  //Sleep(2500);
   cout << "But you will need to go through the lower level dungeons to level up before attempting to kill the dragon.\n\n";
-  Sleep(2000);
+  //Sleep(2000);
   cin.ignore();
   cout << "Press \"Enter\" to continue.";
   cin.get();
@@ -75,7 +75,7 @@ int main() {
         noob.Dungeon(1);
         if (noob.Death() == 1) {
           cout << "YOU HAVE DIED!\nRestart the game to try again\n";
-          Sleep(2000);
+          //Sleep(2000);
           i = 0;
         }
         break;
@@ -83,7 +83,7 @@ int main() {
         noob.Dungeon(2);
         if (noob.Death() == 1) {
           cout << "YOU HAVE DIED!\nRestart the game to try again\n";
-          Sleep(2000);
+          //Sleep(2000);
           i = 0;
         }
         break;
@@ -91,7 +91,7 @@ int main() {
       noob.Dragon();
       if (noob.Death() == 1) {
         cout << "YOU HAVE DIED!\nRestart the game to try again\n";
-        Sleep(2000);
+        //Sleep(2000);
         i = 0;
       }
         break;
@@ -103,9 +103,9 @@ int main() {
         break;
       case 0:
         cout << "Are you sure you want to exit the game?" << endl;
-        Sleep(500);
+        //Sleep(500);
         cout << "You will lose all progress..." << endl;
-        Sleep(500);
+        //Sleep(500);
         cout << "Press \"0\" again to exit or anything else to stay: ";
         cin.clear();
         cin >> validate;
@@ -120,9 +120,9 @@ int main() {
   }
 
   cout << "\nGoodbye " << noob.GetName() << ",\n";
-  Sleep(500);
+  //Sleep(500);
   cout << "You will be missed..." << endl << endl;
-  Sleep(200);
+  //Sleep(200);
   cout << "Close the game or press any button to exit: ";
 
   cin.ignore();

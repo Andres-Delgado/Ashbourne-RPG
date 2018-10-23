@@ -7,7 +7,7 @@
 #include <sstream>
 #include <iomanip>
 #include <cctype>
-#include <Windows.h>
+//#include <Windows.h>
 using namespace std;
 
 void PressEnterp() {
@@ -78,7 +78,7 @@ void Player::LevelUp(){
   cout << "--------------------------\n";
   cout << "YOU HAVE REACHED LEVEL " << level << "!!\n";
   cout << "--------------------------\n" << endl;
-  Sleep(2000);
+  //Sleep(2000);
 
   // OPTION TO ROLL OR AVG {
   while (!decide) {
@@ -94,7 +94,7 @@ void Player::LevelUp(){
     if (choice == 1) {cout << "Gain +6 HP.";}
     else {cout << "Roll 1d10 +2 for new HP.";}
     cout << endl;
-    Sleep(1500);
+    //Sleep(1500);
     cout << "Are you sure? Press \"1\" to validate or anything else to choose again: ";
     cin.clear();
     cin >> validate;
@@ -106,7 +106,7 @@ void Player::LevelUp(){
   if (choice == 1) {
     healthMax += 6;
     cout << "Calculating new HP..." << endl;
-    Sleep(1000);
+    //Sleep(1000);
     cin.clear();
     cin.ignore();
     cout << "Press \"Enter\" to continue." << endl;
@@ -118,7 +118,7 @@ void Player::LevelUp(){
     cin.get();
     dice = (rand() % 10) + 1;
     cout << "Rolling...\n";
-    Sleep(1000);
+    //Sleep(1000);
     cout << "You rolled a " << dice << " +2!" << endl;
     cout << "Press \"Enter\" to continue." << endl;
     cin.get();
@@ -127,7 +127,7 @@ void Player::LevelUp(){
   health = healthMax;
   expointsMax += 100;
   cout << "Your new HP is: " << healthMax << "\n";
-  Sleep(1000);
+  //Sleep(1000);
   cout << "Press \"Enter\" to continue." << endl;
   cin.get();
   return;
@@ -212,30 +212,30 @@ int Player::Attack(){
   if (weapon == "Training Sword (1d4 + 1)"){
     i = (rand() % 4) + 2;
     cout << "You attack with your Training Sword... " << endl;
-    Sleep(2000);
+    //Sleep(2000);
     cout << "It deals " << i << " damage!" << endl;
   }
   if (weapon == "Steel Longsword (1d4 + 3)"){
     i = (rand() % 4) + 4;
     cout << "You attack with your Steel Longsword..." << endl;
-    Sleep(2000);
+    //Sleep(2000);
     cout << "It deals " << i << " damage!" << endl;
   }
   if (weapon == "Dwarven Waraxe (1d8 + 4)"){
     i = (rand() % 8) + 5;
     cout << "You attack with your Dwarven Waraxe... " << endl;
-    Sleep(2000);
+    //Sleep(2000);
     cout << "It deals " << i << " damage!" << endl;
   }
   if (weapon == "Executioner (1d12 + 8)"){
     i = (rand() % 12) + 9;
     cout << "You attack with your Executioner... " << endl;
-    Sleep(2000);
+    //Sleep(2000);
     cout << "It deals " << i << " damage!" << endl;
   }
 
   cout << endl;
-  Sleep(1000);
+  //Sleep(1000);
   return i;
 }
 
@@ -249,21 +249,21 @@ void Player::Damage(int userDamage){health -= userDamage;}
 void Player::UsePotion(){
   if (potion == 0){
     cout << "You're out of potions!\n";
-    Sleep(1000);
+    //Sleep(1000);
     cout << "Buy more at the General Store.\n";
-    Sleep(3000);
+    //Sleep(3000);
     return;
   }
   if (health == healthMax){
     cout << "You already have full health!\n";
-    Sleep(1500);
+    //Sleep(1500);
     return;
   }
 
   int healthGain = healthMax / 4;
   potion -= 1;
   cout << "You drink a Health Potion...\n";
-  Sleep(1000);
+  //Sleep(1000);
   if((health + healthGain) >= healthMax){
     cout << "You regained " << healthMax - health << " HP!\n\n";
     health = healthMax;
@@ -272,7 +272,7 @@ void Player::UsePotion(){
     cout << "You regained " << healthGain << " HP!\n\n";
     health += healthGain;
   }
-  Sleep(2000);
+  //Sleep(2000);
   return;
 }
 
@@ -292,11 +292,11 @@ void Player::Loot(int enemy){
       if (level > 2) {j = (rand() % 30);} // if over-lvl 1/30 chance
       else {j = (rand() % 20);}           // else 1/20 chance
       if (j == 0){
-        Sleep(1000);
+        //Sleep(1000);
         cout << "It also dropped a potion!" << endl;
         potion += 1;
       }
-      Sleep(2000);
+      //Sleep(2000);
       break;
 
     // DRAKE
@@ -312,11 +312,11 @@ void Player::Loot(int enemy){
       if (level > 4) {j = (rand() % 30);} // if max-lvl 1/30 chance
       else {j = (rand() % 20);}           // else 1/20 chance
       if (j == 0){
-        Sleep(1000);
+        //Sleep(1000);
         cout << "It also dropped a potion!" << endl;
         potion += 1;
       }
-      Sleep(2000);
+      //Sleep(2000);
       break;
 
     //DRAGON
@@ -348,19 +348,19 @@ void Player::SetPotion(int userPotion){
 void Player::SetWeapon(int userWeapon){
   if (userWeapon == 1){
     cout << "\nYou purchased the Steel Longsword!\n";
-    Sleep(1000);
+    //Sleep(1000);
     cout << "Its damage is (1d4 +3) with a range of 4-7 damage!";
     weapon = "Steel Longsword (1d4 + 3)";
   }
   if (userWeapon == 2){
     cout << "\nYou purchased the Dwarven Waraxe!\n";
-    Sleep(1000);
+    //Sleep(1000);
     cout << "Its damage is (1d8 +4) with a range of 4-12 damage!";
     weapon = "Dwarven Waraxe (1d8 + 4)";
   }
   if (userWeapon == 3){
     cout << "\nYou purchased the Executioner!\n";
-    Sleep(1000);
+    //Sleep(1000);
     cout << "Its damage is (1d12 +8) with a range of 8-20 damage!";
     weapon = "Executioner (1d12 + 8)";
   }

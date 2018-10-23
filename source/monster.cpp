@@ -7,7 +7,7 @@
 #include <sstream>
 #include <iomanip>
 #include <cctype>
-#include <Windows.h>
+//#include <Windows.h>
 using namespace std;
 
 void PressEnterm() {
@@ -38,6 +38,7 @@ void Monster::Init(int enemy) {
 
 int Monster::Attack() {
   int dmg;
+  //
   // ((1d5 + 1d5) / 2) + range
   // Min bell curve, starts at 1
   //        .:|,_
@@ -57,7 +58,7 @@ int Monster::Attack() {
     dmg += ((rand() % 8) + 1) / 4;
     dmg += 1;                       // 1-5 Drastic Curve
     cout << "Dragon Whelp attacks you with a tail whip..." << endl;
-    Sleep(2000);
+    //Sleep(2000);
     cout << "It deals " << dmg << " Damage!";
   }
 
@@ -66,7 +67,7 @@ int Monster::Attack() {
     dmg += ((rand() % 8) + 1) / 4;
     dmg += 3;                       // 3-7 Drastic Curve
     cout << "Small Drake attacks you with scorch..." << endl;
-    Sleep(2000);
+    //Sleep(2000);
     cout << "It deals " << dmg << " Damage!";
   }
 
@@ -75,11 +76,11 @@ int Monster::Attack() {
     dmg += ((rand() % 8) + 1) / 4;
     dmg += 7;                       // 7-11 Drastic Curve
     cout << "Dragon Whelp attacks you with Fire Breath..." << endl;
-    Sleep(2000);
+    //Sleep(2000);
     cout << "It deals " << dmg << " Damage!";
   }
   cout << endl << endl;
-  Sleep(1500);
+  //Sleep(1500);
   return dmg;
 }
 
@@ -96,7 +97,7 @@ void Monster::Damage(int userDamage) {health -= userDamage;}
 int Monster::Death(){
   if (health <= 0) {
     cout << name << " has died!\n" << endl;
-    Sleep(1000);
+    //Sleep(1000);
     return 1;
   }
   else {return 0;}

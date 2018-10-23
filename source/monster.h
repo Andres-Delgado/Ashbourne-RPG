@@ -18,7 +18,7 @@ public:
 
   void SetHealth(int userHealth);
   void Damage(int userDamage);
-
+//
   int Death();
 
 };
