@@ -1,2 +1,2 @@
 # Ashbourne-RPG
-A small text-based rpg game made in c++
+A small text-based rpg game made in C++
